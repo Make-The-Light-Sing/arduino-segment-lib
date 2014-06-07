@@ -5,14 +5,14 @@
  *      Author: jeckel
  */
 
-#include "Generic.h"
+#include "Effect_Generic.h"
 
-#include "ColorChase.h"
-#include "Fire.h"
-#include "Pulse.h"
-#include "Rainbow.h"
-#include "Spark.h"
-#include "Wave.h"
+#include "Effect_ColorChase.h"
+#include "Effect_Fire.h"
+#include "Effect_Pulse.h"
+#include "Effect_Rainbow.h"
+#include "Effect_Spark.h"
+#include "Effect_Wave.h"
 
 /**
  * Empty constructor

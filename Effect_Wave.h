@@ -8,7 +8,7 @@
 #ifndef WAVE_H_
 #define WAVE_H_
 
-#include "Generic.h"
+#include "Effect_Generic.h"
 
 class Effect_Wave: public Effect_Generic {
         /* methods */

@@ -8,7 +8,7 @@
 #ifndef SPARK_H_
 #define SPARK_H_
 
-#include "Generic.h"
+#include "Effect_Generic.h"
 
 class Effect_Spark: public Effect_Generic {
         /* properties */

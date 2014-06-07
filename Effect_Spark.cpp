@@ -5,7 +5,7 @@
  *      Author: jeckel
  */
 
-#include "Spark.h"
+#include "Effect_Spark.h"
 
 /**
  * Constructor

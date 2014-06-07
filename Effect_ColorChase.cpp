@@ -5,7 +5,7 @@
  *      Author: jeckel
  */
 
-#include "ColorChase.h"
+#include "Effect_ColorChase.h"
 
 /**
  * Constructor

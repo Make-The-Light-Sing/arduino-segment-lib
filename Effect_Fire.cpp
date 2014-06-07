@@ -5,7 +5,7 @@
  *      Author: jeckel
  */
 
-#include "Fire.h"
+#include "Effect_Fire.h"
 
 Effect_Fire::Effect_Fire(T_EffectConfig config)
     : Effect_Generic(config)

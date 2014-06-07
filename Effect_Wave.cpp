@@ -5,7 +5,7 @@
  *      Author: jeckel
  */
 
-#include "Wave.h"
+#include "Effect_Wave.h"
 
 Effect_Wave::Effect_Wave(T_EffectConfig config)
     : Effect_Generic(config)

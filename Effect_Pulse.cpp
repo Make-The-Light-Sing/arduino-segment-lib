@@ -5,7 +5,7 @@
  *      Author: jeckel
  */
 
-#include "Pulse.h"
+#include "Effect_Pulse.h"
 
 /**
  * Init pulse effect with fixed loop size

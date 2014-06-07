@@ -8,7 +8,7 @@
 #ifndef COLORCHASE_H_
 #define COLORCHASE_H_
 
-#include "Generic.h"
+#include "Effect_Generic.h"
 
 class Effect_ColorChase: public Effect_Generic {
     public:

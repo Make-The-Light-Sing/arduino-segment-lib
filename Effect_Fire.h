@@ -8,7 +8,7 @@
 #ifndef FIRE_H_
 #define FIRE_H_
 
-#include "Generic.h"
+#include "Effect_Generic.h"
 
 class Effect_Fire: public Effect_Generic {
         /* properties */

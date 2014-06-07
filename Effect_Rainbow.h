@@ -8,7 +8,7 @@
 #ifndef RAINBOW_H_
 #define RAINBOW_H_
 
-#include "Generic.h"
+#include "Effect_Generic.h"
 
 class Effect_Rainbow: public Effect_Generic {
         /* methods */

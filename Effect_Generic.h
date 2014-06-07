@@ -9,8 +9,8 @@
 #define GENERIC_H_
 
 #include <Color.h>
-#include "../Types.h"
-#include "../Segment.h"
+#include "Types.h"
+#include "Segment.h"
 
 class Segment;
 

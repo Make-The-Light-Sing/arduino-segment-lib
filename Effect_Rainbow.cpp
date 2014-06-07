@@ -5,7 +5,7 @@
  *      Author: jeckel
  */
 
-#include "Rainbow.h"
+#include "Effect_Rainbow.h"
 
 /**
  * Constructor

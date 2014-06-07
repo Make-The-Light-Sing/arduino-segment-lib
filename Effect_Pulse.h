@@ -8,7 +8,7 @@
 #ifndef PULSE_H_
 #define PULSE_H_
 
-#include "Generic.h"
+#include "Effect_Generic.h"
 
 class Effect_Pulse : public Effect_Generic {
     public:

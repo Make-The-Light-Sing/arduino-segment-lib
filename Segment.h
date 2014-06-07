@@ -10,7 +10,7 @@
 
 #include <Color.h>
 #include "Types.h"
-#include "Effect/Generic.h"
+#include "Effect_Generic.h"
 
 class Effect_Generic;
 
