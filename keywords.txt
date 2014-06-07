@@ -8,6 +8,7 @@
 
 E_Direction	KEYWORD1
 E_Effect	KEYWORD1
+Effect_Factory	KEYWORD1
 Effect_Generic	KEYWORD1
 Segment	KEYWORD1
 SegmentCollection	KEYWORD1
@@ -19,6 +20,7 @@ T_EffectConfig	KEYWORD1
 #######################################
 
 addSegment	KEYWORD2
+createEffect	KEYWORD2
 init	KEYWORD2
 postStep	KEYWORD2
 preStep	KEYWORD2
