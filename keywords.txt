@@ -1,0 +1,39 @@
+#######################################
+# Syntax Coloring Map
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+E_Direction	KEYWORD1
+E_Effect	KEYWORD1
+Effect_Generic	KEYWORD1
+Segment	KEYWORD1
+SegmentCollection	KEYWORD1
+T_SegmentConfig	KEYWORD1
+T_EffectConfig	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+addSegment	KEYWORD2
+init	KEYWORD2
+postStep	KEYWORD2
+preStep	KEYWORD2
+setEffect	KEYWORD2
+setSegmentColor	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+UP	LITERAL1
+DOWN	LITERAL1
+Color_Chase	LITERAL1
+Fire	LITERAL1
+Pulse	LITERAL1
+Rainbow	LITERAL1
+Spark	LITERAL1
+Wave	LITERAL1
