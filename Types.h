@@ -47,4 +47,13 @@ typedef struct T_EffectConfig {
     E_Effect    type;
 };
 
+/**
+ * Define the Segment list configuration
+ */
+typedef struct T_SegmentCollectionConfig {
+    unsigned char size;
+    T_SegmentConfig* segments;
+    T_EffectConfig* effects;
+};
+
 #endif /* TYPES_H_ */

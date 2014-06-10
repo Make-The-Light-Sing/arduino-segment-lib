@@ -14,6 +14,7 @@ Segment	KEYWORD1
 SegmentCollection	KEYWORD1
 T_SegmentConfig	KEYWORD1
 T_EffectConfig	KEYWORD1
+T_SegmentCollectionConfig	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
