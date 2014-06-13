@@ -52,6 +52,7 @@ typedef struct T_EffectConfig {
  */
 typedef struct T_SegmentCollectionConfig {
     unsigned char size;
+    unsigned char delay;
     T_SegmentConfig* segments;
     T_EffectConfig* effects;
 };
