@@ -20,12 +20,20 @@ struct CRGB leds[NUM_LEDS];
 
 // Configure each segment with point to leds and segment length
 T_SegmentConfig seg_config[NB_SEGMENT] = {
-    { leds, NUM_LEDS, { CBlue, UP, Wave }}
+    {
+        .start = 0,
+        .length = NUM_LEDS,
+        .effect = {
+            .color = CBlue,
+            .direction = UP,
+            .type = Wave
+        }
+    }
 };
 
 
 TM1809Controller800Mhz<LEDSTRIP_PIN> LED;
-SegmentCollection segments;
+SegmentCollection segments(leds);
 
 void setup()
 {
