@@ -21,9 +21,9 @@ Effect_ColorChase::Effect_ColorChase(T_EffectConfig config)
 void Effect_ColorChase::_preStep()
 {
     if (config.direction == DOWN) {
-        segment->config.leds[segment->config.length - step_index - 1] = config.color;
+        segment->leds()[segment->length() - step_index - 1] = config.color;
     } else {
-        segment->config.leds[step_index] = config.color;
+        segment->leds()[step_index] = config.color;
     }
     //segment->config.leds[step_index] = config.color;
 }
@@ -33,5 +33,5 @@ void Effect_ColorChase::_preStep()
  */
 void Effect_ColorChase::_postStep()
 {
-    memset(segment->config.leds, 0x00, segment->config.length * sizeof(CRGB));
+    memset(segment->leds(), 0x00, segment->length() * sizeof(CRGB));
 }

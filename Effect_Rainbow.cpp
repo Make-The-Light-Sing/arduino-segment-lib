@@ -28,16 +28,16 @@ void Effect_Rainbow::init()
  */
 void Effect_Rainbow::_preStep()
 {
-    for(int iLed = 0; iLed < segment->config.length; iLed++)
+    for(int iLed = 0; iLed < segment->length(); iLed++)
     {
         // tricky math! we use each pixel as a fraction of the full 384-color
         // wheel (thats the i / strip.numPixels() part)
         // Then add in j which makes the colors go around per pixel
         // the % 384 is to make the wheel cycle around
         if (config.direction == DOWN) {
-            segment->config.leds[iLed].Wheel(((iLed * 384 / segment->config.length) + step_index) % 384);
+            segment->leds()[iLed].Wheel(((iLed * 384 / segment->length()) + step_index) % 384);
         } else {
-            segment->config.leds[segment->config.length - iLed - 1].Wheel(((iLed * 384 / segment->config.length) + step_index) % 384);
+            segment->leds()[segment->length() - iLed - 1].Wheel(((iLed * 384 / segment->length()) + step_index) % 384);
         }
     }
 }

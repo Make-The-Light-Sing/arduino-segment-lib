@@ -16,7 +16,7 @@ Effect_Fire::Effect_Fire(T_EffectConfig config)
 
 void Effect_Fire::init()
 {
-    fire = (unsigned char *) calloc(segment->config.length, sizeof(unsigned char));
+    fire = (unsigned char *) calloc(segment->length(), sizeof(unsigned char));
     //memset(fire, 0, segment->config.length);
 }
 
@@ -26,16 +26,16 @@ void Effect_Fire::init()
 void Effect_Fire::_preStep()
 {
     fire[0] = random(255);
-    for(int y = (segment->config.length - 1); y > 0; y--)
+    for(int y = (segment->length() - 1); y > 0; y--)
     {
-        fire[y] = ((fire[y - 1] + fire[(y - 2) % segment->config.length]) * (segment->config.length / 2)) / (segment->config.length * 1.045);
+        fire[y] = ((fire[y - 1] + fire[(y - 2) % segment->length()]) * (segment->length() / 2)) / (segment->length() * 1.045);
     }
-    for(int iLed=0; iLed < segment->config.length; iLed++)
+    for(int iLed=0; iLed < segment->length(); iLed++)
     {
         if (config.direction == DOWN) {
-            segment->config.leds[segment->config.length - iLed - 1].fireColor(fire[iLed]);
+            segment->leds()[segment->length() - iLed - 1].fireColor(fire[iLed]);
         } else {
-            segment->config.leds[iLed].fireColor(fire[iLed]);
+            segment->leds()[iLed].fireColor(fire[iLed]);
         }
     }
 }

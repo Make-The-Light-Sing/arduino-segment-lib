@@ -17,9 +17,9 @@ class Effect_Generic;
 class Segment {
         /* properties */
     public:
-        T_SegmentConfig  config;
         Effect_Generic*  effect;
     protected:
+        T_SegmentConfig  config;
         uint16_t         step_loop    = 0;
         uint16_t         step_index   = 0;
         boolean          has_effect = false;
@@ -33,6 +33,8 @@ class Segment {
         void preStep();
         void postStep();
         void init();
+        CRGB* leds() { return config.leds; };
+        uint16_t length() { return config.length; };
         virtual ~Segment() {};
 };
 

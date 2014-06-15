@@ -81,7 +81,7 @@ void Effect_Generic::setColor(CRGB color)
  */
 void Effect_Generic::init()
 {
-    step_loop = segment->config.length;
+    step_loop = segment->length();
 }   // init
 
 /**
