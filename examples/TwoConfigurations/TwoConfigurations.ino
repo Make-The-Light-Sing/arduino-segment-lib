@@ -21,28 +21,43 @@ struct CRGB leds[NUM_LEDS];
 #define NB_SEGMENT   2
 // Configure each segment with point to leds and segment length
 T_SegmentConfig seg_config[NB_SEGMENT] = {
-    { leds, 10},
-    { leds + 10, 11}
-};
-// Effect link to segment : color, direction (up or down), and effect
-T_EffectConfig effect_config[NB_SEGMENT] = {
-    { CBlue, UP, Wave },
-    { CRed, DOWN, Color_Chase }
+    {
+        .start = 0,
+        .length = 10,
+        .effect = {
+            .color = CBlue,
+            .direction = UP,
+            .type = Wave
+        }
+    },
+    {
+        .start = 10,
+        .length = 11,
+        .effect = {
+            .color = CRed,
+            .direction = DOWN,
+            .type = Color_Chase
+        }
+    }
 };
 
 /** SECOND CONFIGURATION **/
 #define NB_SEGMENT_OFF    1
 T_SegmentConfig seg_config_off[NB_SEGMENT_OFF] = {
-    { leds, NUM_LEDS}
-};
-
-T_EffectConfig effect_config_off[NB_SEGMENT] = {
-    { CWhite, DOWN, Spark }
+    {
+        .start = 0,
+        .length = NUM_LEDS,
+        .effect = {
+            .color = CWhite,
+            .direction = DOWN,
+            .type = Spark
+        }
+    }
 };
 
 TM1809Controller800Mhz<LEDSTRIP_PIN> LED;
-SegmentCollection segments;
-SegmentCollection segmentsOff;
+SegmentCollection segments(leds);
+SegmentCollection segmentsOff(leds);
 
 unsigned long time;
 
@@ -51,17 +66,17 @@ unsigned long time;
 
 void setup()
 {
-	Effect_Factory factory;
+    Effect_Factory factory;
 
     // Init first config with 2 segments
     for(unsigned int i = 0; i < NB_SEGMENT; i++) {
-        segments.addSegment(new Segment(seg_config[i], factory.createEffect(effect_config[i])));
+        segments.addSegment(new Segment(seg_config[i]));
     }
     segments.init();
 
     // Init second config with only 1 segment
     for(unsigned int i = 0; i < NB_SEGMENT_OFF; i++) {
-        segmentsOff.addSegment(new Segment(seg_config_off[i], factory.createEffect(effect_config_off[i])));
+        segmentsOff.addSegment(new Segment(seg_config_off[i]));
     }
     segmentsOff.init();
 
