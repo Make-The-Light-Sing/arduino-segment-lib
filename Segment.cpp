@@ -17,6 +17,14 @@ Segment::Segment(T_SegmentConfig config, Effect_Generic* effect)
     has_effect = true;
 }
 
+Segment::Segment(T_SegmentConfig config) : config(config), step_loop(config.length)
+{
+    Effect_Factory factory;
+    effect = factory.createEffect(config.effect);
+    effect->setSegment(this);
+    has_effect = true;
+};
+
 /**
  * Define new effect on segment
  */

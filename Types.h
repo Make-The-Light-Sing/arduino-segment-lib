@@ -10,13 +10,6 @@
 
 #include <Color.h>
 
-/**
- * Define the effect configuration structure
- */
-typedef struct T_SegmentConfig {
-    CRGB*         leds;
-    uint16_t      length;
-};
 
 /**
  * Define type for effect direction
@@ -48,13 +41,21 @@ typedef struct T_EffectConfig {
 };
 
 /**
+ * Define the effect configuration structure
+ */
+typedef struct T_SegmentConfig {
+    CRGB*          leds;
+    uint16_t       length;
+    T_EffectConfig effect;
+};
+
+/**
  * Define the Segment list configuration
  */
 typedef struct T_SegmentCollectionConfig {
     uint8_t  size;
     uint16_t delay;
     T_SegmentConfig* segments;
-    T_EffectConfig* effects;
 };
 
 #endif /* TYPES_H_ */

@@ -27,7 +27,7 @@ class Segment {
         /* methods */
     public:
         Segment() { /* remove warnings */ effect = (Effect_Generic*) malloc(0); };
-        Segment(T_SegmentConfig config) : config(config), step_loop(config.length) { /* remove warnings */ effect = (Effect_Generic*) malloc(0); };
+        Segment(T_SegmentConfig config);
         Segment(T_SegmentConfig config, Effect_Generic* effect);
         void setEffect(Effect_Generic* eff);
         void preStep();
