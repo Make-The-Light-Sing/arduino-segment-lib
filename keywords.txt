@@ -27,6 +27,9 @@ postStep	KEYWORD2
 preStep	KEYWORD2
 setEffect	KEYWORD2
 setSegmentColor	KEYWORD2
+leds	KEYWORD2
+length	KEYWORD2
+setLeds	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

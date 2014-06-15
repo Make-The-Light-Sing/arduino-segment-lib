@@ -82,7 +82,7 @@ void SegmentCollection::addSegment(Segment *seg)
     size++;
     collection = (Segment**) realloc(collection, size * sizeof(Segment*));
     collection[size-1] = seg;
-    seg->setLeds(leds);
+    seg->setLeds(p_leds);
 }   // addSegment
 
 /**
@@ -131,3 +131,8 @@ void SegmentCollection::setSegmentColor(unsigned int index, CRGB color)
 {
     collection[index]->effect->config.color = color;
 }   // setSegmentColor
+
+void SegmentCollection::setLeds(CRGB* leds)
+{
+    p_leds = leds;
+}

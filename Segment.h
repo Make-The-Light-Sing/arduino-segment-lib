@@ -45,12 +45,13 @@ class SegmentCollection {
     protected:
         unsigned int size = 0;
         Segment**    collection;
-        CRGB*        leds;
+        CRGB*        p_leds;
 
         /* methods */
     public:
         SegmentCollection();
-        SegmentCollection(CRGB* leds) : leds(leds) { collection = (Segment**) malloc(0); };
+        SegmentCollection(CRGB* leds) : p_leds(leds) { collection = (Segment**) malloc(0); };
+        void setLeds(CRGB* leds);
         void addSegment(Segment* seg);
         Segment* getSegment(unsigned int i);
         void preStep();
