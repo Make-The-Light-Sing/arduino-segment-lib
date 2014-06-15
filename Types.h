@@ -44,7 +44,7 @@ typedef struct T_EffectConfig {
  * Define the effect configuration structure
  */
 typedef struct T_SegmentConfig {
-    CRGB*          leds;
+    uint16_t       start;
     uint16_t       length;
     T_EffectConfig effect;
 };

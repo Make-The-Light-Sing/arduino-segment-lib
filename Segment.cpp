@@ -82,6 +82,7 @@ void SegmentCollection::addSegment(Segment *seg)
     size++;
     collection = (Segment**) realloc(collection, size * sizeof(Segment*));
     collection[size-1] = seg;
+    seg->setLeds(leds);
 }   // addSegment
 
 /**

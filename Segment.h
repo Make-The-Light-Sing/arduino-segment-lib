@@ -23,6 +23,7 @@ class Segment {
         uint16_t         step_loop    = 0;
         uint16_t         step_index   = 0;
         boolean          has_effect = false;
+        CRGB*            p_leds;
 
         /* methods */
     public:
@@ -33,7 +34,8 @@ class Segment {
         void preStep();
         void postStep();
         void init();
-        CRGB* leds() { return config.leds; };
+        void setLeds(CRGB* leds) { p_leds = leds + config.start; };
+        CRGB* leds() { return p_leds; };
         uint16_t length() { return config.length; };
         virtual ~Segment() {};
 };
@@ -42,11 +44,13 @@ class SegmentCollection {
         /* properties */
     protected:
         unsigned int size = 0;
-        Segment** collection;
+        Segment**    collection;
+        CRGB*        leds;
 
         /* methods */
     public:
         SegmentCollection();
+        SegmentCollection(CRGB* leds) : leds(leds) { collection = (Segment**) malloc(0); };
         void addSegment(Segment* seg);
         Segment* getSegment(unsigned int i);
         void preStep();
