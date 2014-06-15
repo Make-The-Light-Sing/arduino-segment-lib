@@ -20,13 +20,9 @@ struct CRGB leds[NUM_LEDS];
 
 // Configure each segment with point to leds and segment length
 T_SegmentConfig seg_config[NB_SEGMENT] = {
-    { leds, NUM_LEDS}
+    { leds, NUM_LEDS, { CBlue, UP, Wave }}
 };
 
-// Effect link to segment : color, direction (up or down), and effect
-T_EffectConfig effect_config[NB_SEGMENT] = {
-    { CBlue, UP, Wave }
-};
 
 TM1809Controller800Mhz<LEDSTRIP_PIN> LED;
 SegmentCollection segments;
@@ -35,7 +31,7 @@ void setup()
 {
 	Effect_Factory factory;
     for(unsigned int i = 0; i < NB_SEGMENT; i++) {
-        segments.addSegment(new Segment(seg_config[i], factory.createEffect(effect_config[i])));
+        segments.addSegment(new Segment(seg_config[i]));
     }
     segments.init();
     LED.init();
